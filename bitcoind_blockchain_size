@@ -51,5 +51,5 @@ if [ "$1" = "config" ]; then
     exit 0
 fi
 
-echo "bitcoind_blockchain_size.value $(du -k -s $BLOCK_DIR | awk '{print $1}')"
+echo "bitcoind_blockchain_size.value $(du -k -s $BLOCK_DIR | awk '{ print $1 * 1024; }')"
 
