@@ -52,5 +52,5 @@ if [ "$1" = "config" ]; then
     exit 0
 fi
 
-echo "bitcoind_network_traffic.value $($BINARY -datadir=$DATA_DIR getnettotals | grep totalbytes | grep -o '[0-9]*' | sed "N;s/\n/+/" | bc)"
+echo "bitcoind_network_traffic.value $($BINARY -datadir=$DATA_DIR getnettotals | grep totalbytes | grep -Eo '[0-9.]+' | sed "N;s/\n/+/" | bc)"
 
